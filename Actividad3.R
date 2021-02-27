@@ -6,21 +6,16 @@ output: html_document
 ---
 
 
-library(dplyr)
-library(chron)
+#ruta = "D:\\1- Master - BigData\\Asignaturas\\4. Analisis e interpretación de datos\\Actividades\\Actividad 3\\Encuesta_movilidad_2.csv"
 
-ruta = "D:\\1- Master - BigData\\Asignaturas\\4. Analisis e interpretación de datos\\Actividades\\Actividad 3\\Encuesta_movilidad_2.csv"
 
-datos <- read.csv2(ruta)
-
+datos <- read.csv2('https://raw.githubusercontent.com/jduran2305/AnalisisDatos/main/Encuesta_movilidad_2.csv')
 datos <- datos[datos$MUNICIPIO_DESTINO=="BOGOTA-DC 11001",]
 datos <- datos[datos$MUNICIPIO_ORIGEN=="BOGOTA-DC 11001",]
 
 
 #Se validan los tipos de datos 
 str(datos)
-
-
 
 #Se extraen los registros con medio de transprote bicileta  y su duración
 bicicletas <- datos[datos$MEDIO_PREDOMINANTE=="BICICLETA, BICICLETA CON MOTOR", ]
